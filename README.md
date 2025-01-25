@@ -1,6 +1,6 @@
-## NOTE: This project is still under development
+## PowerGrid 🔌
 
-### PowerGrid is a collection of Microsoft PowerShell modules that will be used to aid penetration testers during all phases of an assessment. PowerGrid is comprised of the following modules and scripts:
+### PowerGrid is a collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment. PowerGrid is comprised of the following modules and scripts:
 
 ## CodeExecution
 
@@ -212,57 +212,3 @@ If you're running PowerShell v3 and you want to remove the annoying 'Do you real
 For help on each individual command, Get-Help is your friend.
 
 Note: The tools contained within this module were all designed such that they can be run individually. Including them in a module simply lends itself to increased portability.
-
-## Contribution Rules
-
-We need contributions! If you have a great idea for PowerGrid, we'd love to add it. New additions will require the following:
-
-- The script must adhere to the style guide. Any exceptions to the guide line would need an explicit, valid reason.
-- The module manifest needs to be updated to reflect the new function being added.
-- A brief description of the function should be added to this README.md
-- Pester tests must accompany all new functions. See the Tests folder for examples but we are looking for tests that at least cover the basics by testing for expected/unexpected input/output and that the function exhibits desired functionality. Make sure the function is passing all tests (preferably in mutiple OSes) prior to submitting a pull request. Thanks!
-
-## Script Style Guide
-
-**For all contributors and future contributors to PowerGrid, I ask that you follow this style guide when writing your scripts/modules.**
-
-- Avoid Write-Host **at all costs**. PowerShell functions/cmdlets are not command-line utilities! Pull requests containing code that uses Write-Host will not be considered. You should output custom objects instead. For more information on creating custom objects, read these articles:
-
-  - <http://blogs.technet.com/b/heyscriptingguy/archive/2011/05/19/create-custom-objects-in-your-powershell-script.aspx>
-  - <http://technet.microsoft.com/en-us/library/ff730946.aspx>
-
-- If you want to display relevant debugging information to the screen, use Write-Verbose. The user can always just tack on '-Verbose'.
-
-- Always provide descriptive, comment-based help for every script. Also, be sure to include your name and a BSD 3-Clause license (unless there are extenuating circumstances that prevent the application of the BSD license).
-
-- Make sure all functions follow the proper PowerShell verb-noun agreement. Use Get-Verb to list the default verbs used by PowerShell. Exceptions to supported verbs will be considered on a case-by-case basis.
-
-- I prefer that variable names be capitalized and be as descriptive as possible.
-
-- Provide logical spacing in between your code. Indent your code to make it more readable.
-
-- If you find yourself repeating code, write a function.
-
-- Catch all anticipated errors and provide meaningful output. If you have an error that should stop execution of the script, use 'Throw'. If you have an error that doesn't need to stop execution, use Write-Error.
-
-- If you are writing a script that interfaces with the Win32 API, try to avoid compiling C# inline with Add-Type. Try to use the PSReflect module, if possible.
-
-- Do not use hardcoded paths. A script should be useable right out of the box. No one should have to modify the code unless they want to.
-
-- PowerShell v2 compatibility is highly desired.
-
-- Use positional parameters and make parameters mandatory when it makes sense to do so. For example, I'm looking for something like the following:
-
-  - `[Parameter(Position = 0, Mandatory = $True)]`
-
-- Don't use any aliases unless it makes sense for receiving pipeline input. They make code more difficult to read for people who are unfamiliar with a particular alias.
-
-- Try not to let commands run on for too long. For example, a pipeline is a natural place for a line break.
-
-- Don't go overboard with inline comments. Only use them when certain aspects of the code might be confusing to a reader.
-
-- Rather than using Out-Null to suppress unwanted/irrelevant output, save the unwanted output to $null. Doing so provides a slight performance enhancement.
-
-- Use default values for your parameters when it makes sense. Ideally, you want a script that will work without requiring any parameters.
-
-- If a script creates complex custom objects, include a ps1xml file that will properly format the object's output.
