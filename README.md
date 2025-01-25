@@ -1,4 +1,4 @@
-## NOTE: This project is still under development
+## PowerGrid 🔌
 
 ### PowerGrid is a collection of Microsoft PowerShell modules that will be used to aid penetration testers during all phases of an assessment. PowerGrid is comprised of the following modules and scripts:
 
