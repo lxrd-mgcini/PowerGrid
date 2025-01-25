@@ -1,6 +1,6 @@
 ## PowerGrid 🔌
 
-### PowerGrid is a collection of Microsoft PowerShell modules that will be used to aid penetration testers during all phases of an assessment. PowerGrid is comprised of the following modules and scripts:
+### PowerGrid is a collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment. PowerGrid is comprised of the following modules and scripts:
 
 ## CodeExecution
 
@@ -266,3 +266,5 @@ We need contributions! If you have a great idea for PowerGrid, we'd love to add 
 - Use default values for your parameters when it makes sense. Ideally, you want a script that will work without requiring any parameters.
 
 - If a script creates complex custom objects, include a ps1xml file that will properly format the object's output.
+
+# Note: this project is still under development
